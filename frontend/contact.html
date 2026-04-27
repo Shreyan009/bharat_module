@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us – Bharat Modules | Central Operations & Support</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Contact Bharat Modules for industrial procurement assistance, vendor onboarding, RFQ submissions, and platform support. Reach our central operations team via email, phone, or enquiry form. 24-hour SLA guaranteed.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bharatmodules.com/contact">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bharatmodules.com/contact">
+    <meta property="og:title" content="Contact Bharat Modules – Central Operations & Support">
+    <meta property="og:description" content="Reach Bharat Modules for procurement assistance, vendor onboarding, RFQ submissions, and technical support. Guaranteed 24-hour SLA response.">
+    <meta property="og:site_name" content="Bharat Modules">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us – Bharat Modules | Central Operations">
+    <meta name="twitter:description" content="Contact Bharat Modules for industrial procurement assistance, vendor onboarding, RFQ submissions, and platform support. 24-hour SLA guaranteed.">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="contact.css">
+    <script src="base.js" defer></script>
+    <script src="contact.js" defer></script>
+</head>
+<body>
+
+    <nav id="nav">
+      <div class="nav-default">
+        <a href="index.html" class="nav-logo">
+          <span class="nav-logo-text">BHARAT MODULES</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalogue.html">Products</a></li>
+          <li><a href="cart.html">RFQ Cart</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html" class="nav-btn-login">Register / Login</a></li>
+          <li>
+            <button class="nav-search" onclick="openSearch()" aria-label="Search">
+              <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg>
+            </button>
+          </li>
+          <li class="theme-toggle-li">
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
+              <svg class="sun-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              <svg class="moon-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </button>
+          </li>
+        </ul>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav-search-bar" id="navSearchBar">
+        <div class="nav-search-icon-inline">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg>
+        </div>
+        <input type="text" id="navSearchInput" placeholder="Search components, modules, OEMs, part numbers…">
+        <div class="nav-search-divider"></div>
+        <button class="nav-search-submit"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg></button>
+        <button class="nav-search-close" onclick="closeSearch()" aria-label="Close">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" /></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-wrap" id="top">
+        <canvas id="radarCanvas"></canvas>
+        <div class="radar-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge fade-up">
+                <span class="hero-badge-dot"></span>
+                Closed-Network B2B Platform
+            </div>
+            <h1 class="hero-headline fade-up">Central Operations &amp; Contact.</h1>
+            <p class="hero-sub fade-up">
+                Bharat Modules is a closed-network B2B platform. Select your operational pipeline below to ensure a strict 24-hour SLA response.
+            </p>
+            <div class="sla-banner fade-up">
+                <span class="sla-icon">⏱</span>
+                Guaranteed 24-Hour SLA Response Window
+            </div>
+        </div>
+    </section>
+
+    <!-- Routing Matrix -->
+    <section class="section-wrap" id="routing">
+        <h2 class="section-title fade-up">
+            Select Your Operational Pipeline
+        </h2>
+
+        <div class="cards-grid">
+            <!-- Card 1: Enterprise Procurement -->
+            <div class="route-card fade-up" id="card-buyer">
+                <div class="card-icon-wrap">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E85C0D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <line x1="12" y1="2" x2="12" y2="4"/>
+                        <line x1="12" y1="20" x2="12" y2="22"/>
+                        <line x1="2" y1="12" x2="4" y2="12"/>
+                        <line x1="20" y1="12" x2="22" y2="12"/>
+                    </svg>
+                </div>
+                <div class="card-tag">Procurement Channel</div>
+                <h3 class="card-headline">Procure Hardware</h3>
+                <div class="card-body">For defense contractors, labs, and enterprise buyers looking to source verified IDDM components or submit bulk RFQs.</div>
+                <a href="dashboard-buyer.html" class="card-cta">
+                    Go to Buyer Portal
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <!-- Card 2: Manufacturer Compliance -->
+            <div class="route-card fade-up delay-1" id="card-vendor">
+                <div class="card-icon-wrap">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E85C0D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/>
+                        <path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/>
+                    </svg>
+                </div>
+                <div class="card-tag">Vendor Channel</div>
+                <h3 class="card-headline">List Your Inventory</h3>
+                <div class="card-body">For Indian OEMs and factories looking to complete their verifications and list their components on our closed network.</div>
+                <a href="register.html" class="card-cta">
+                    Start Vendor Onboarding
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <!-- Card 3: Support -->
+            <div class="route-card fade-up delay-2" id="card-support">
+                <div class="card-icon-wrap">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E85C0D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 18v-6a9 9 0 0118 0v6"/>
+                        <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/>
+                    </svg>
+                </div>
+                <div class="card-tag">Support Channel</div>
+                <h3 class="card-headline">Platform & Technical Support</h3>
+                <div class="card-body">For existing users experiencing technical issues, API integrations, or institutional partnership inquiries.</div>
+                <a href="#contact-form" class="card-cta">
+                    Open Support Ticket
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="white-zone">
+        <!-- Physical Presence & Contact -->
+        <section class="section-wrap presence-section">
+            <h2 class="section-title fade-up">
+                Physical Presence & Contact
+            </h2>
+
+            <div class="data-section fade-up">
+                <!-- Column 1 -->
+                <div>
+                    <h3 class="data-col-title">Direct Comm-Links</h3>
+
+                    <div class="comm-row">
+                        <div class="comm-label">Procurement Desk</div>
+                        <div class="comm-value"><a href="mailto:procurement@bharatmodules.in">procurement@bharatmodules.in</a></div>
+                    </div>
+
+                    <div class="comm-row">
+                        <div class="comm-label">Compliance & Audit</div>
+                        <div class="comm-value"><a href="mailto:audit@bharatmodules.in">audit@bharatmodules.in</a></div>
+                    </div>
+
+                    <div class="comm-row">
+                        <div class="comm-label">Platform Support</div>
+                        <div class="comm-value"><a href="mailto:support@bharatmodules.in">support@bharatmodules.in</a></div>
+                    </div>
+
+                    <div class="comm-row">
+                        <div class="comm-label">Direct Line / WhatsApp</div>
+                        <div class="comm-value"><a href="tel:+919538021127">+91 9538021127</a></div>
+                        <div class="comm-note">Available Mon–Fri, 0900–1800 IST</div>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="data-divider"></div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="data-col-title">Registered Headquarters</h3>
+                    <div class="hq-address">
+                        <strong>Bharat Modules Pvt. Ltd.</strong>
+                        P.O. Box No.: 1908, PG-5th Floor<br>
+                        Bull Temple Road, Basavanagudi<br>
+                        Bengaluru – 560019<br>
+                        Karnataka, India
+                    </div>
+                    <div class="hq-note">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Visits strictly by prior appointment only.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Form -->
+    <section class="section-wrap form-section-wrap" id="contact-form">
+        <div class="form-section">
+            <div class="form-header fade-up">
+                <h2 class="form-title">Submit an Enquiry</h2>
+                <p class="form-subtitle">All fields are reviewed. Incomplete or non-business submissions will not receive a response.</p>
+            </div>
+
+            <div class="form-box fade-up">
+                <form id="queryForm" novalidate>
+                    <div class="form-grid">
+                        <div class="form-field" id="ff-name">
+                            <label class="field-label">Full Name <span class="field-req">*</span></label>
+                            <input type="text" class="field-input" id="inp-name" placeholder="Your full name" autocomplete="name">
+                            <span class="field-error" id="err-name">Full name is required.</span>
+                        </div>
+
+                        <div class="form-field" id="ff-org">
+                            <label class="field-label">Organisation / Company <span class="field-req">*</span></label>
+                            <input type="text" class="field-input" id="inp-org" placeholder="Company or institution name" autocomplete="organization">
+                            <span class="field-error" id="err-org">Organisation name is required.</span>
+                        </div>
+
+                        <div class="form-field full" id="ff-email">
+                            <label class="field-label">Official Work Email <span class="field-req">*</span></label>
+                            <input type="email" class="field-input" id="inp-email" placeholder="name@organisation.in" autocomplete="email">
+                            <span class="field-note">We do not respond to personal email addresses for procurement inquiries.</span>
+                            <span class="field-error" id="err-email">A valid work email address is required.</span>
+                        </div>
+
+                        <div class="form-field full" id="ff-type">
+                            <label class="field-label">Inquiry Type <span class="field-req">*</span></label>
+                            <select class="field-select" id="inp-type">
+                                <option value="" disabled selected>&mdash; Select inquiry type &mdash;</option>
+                                <option value="rfq">RFQ / Procurement Assistance</option>
+                                <option value="audit">Vendor Verification Status</option>
+                                <option value="bug">Technical / Platform Support</option>
+                                <option value="partnership">Institutional / Strategic Partnership</option>
+                            </select>
+                            <span class="field-error" id="err-type">Please select an inquiry type.</span>
+                        </div>
+
+                        <div class="form-field full" id="ff-msg">
+                            <label class="field-label">Message <span class="field-req">*</span></label>
+                            <textarea class="field-textarea" id="inp-msg" rows="5" placeholder="Describe your requirement or query in detail&hellip;"></textarea>
+                            <span class="field-error" id="err-msg">Message cannot be empty.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <p class="form-disclaimer">
+                            <strong>Closed-network protocol:</strong> All submissions are logged and reviewed within the 24-hour SLA window.
+                        </p>
+                        <button type="button" class="btn-transmit">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo-text">BHARAT MODULES</span>
+          <p>India's trusted B2B marketplace for industrial modules — Search, Source, Build with confidence.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Platform</h4>
+            <a href="catalogue.html">Browse Catalogue</a>
+            <a href="cart.html">RFQ Portal</a>
+            <a href="#">Bharat Verified</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Sitemap</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">RFQ FAQ</a>
+            <a href="#">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Bharat Modules & Others. All rights reserved.</p>
+        <a href="#" class="scroll-top" aria-label="Back to top" onclick="scrollToTop(event)">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7" /></svg>
+        </a>
+      </div>
+    </footer>
+
+
+    
+    <!-- SEO: Accessible Structured Content -->
+    <div style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;" aria-hidden="true">
+        <p>Contact Bharat Modules, India's closed-network B2B industrial procurement platform, through our central operations team. We provide dedicated communication channels for enterprise buyers, defense contractors, Indian OEMs, and manufacturers who wish to source or list verified indigenous components. Our procurement desk handles RFQ submissions and bulk purchasing inquiries for IDDM-compliant components. All enterprise procurement requests are reviewed within a guaranteed 24-hour SLA response window.</p>
+        <p>For vendor onboarding and manufacturer compliance, Indian OEMs and factories can reach our compliance and audit team to initiate the Bharat Verified certification process. Certified manufacturers gain access to list their verified inventory on our closed network and receive direct RFQs from enterprise buyers across India. Platform and technical support is available for existing registered users experiencing API integration issues, account access problems, or institutional partnership inquiries.</p>
+        <p>Our registered headquarters is located in Basavanagudi, Bengaluru, Karnataka, India. Visits to our office require a prior appointment. You can also reach us by phone or WhatsApp at our direct line, available Monday through Friday between 0900 and 1800 IST. For procurement assistance, vendor verification status updates, technical support, or institutional and strategic partnership discussions, submit your enquiry using our contact form and our team will respond within one business day. Bharat Modules is committed to supporting the Make in India initiative through transparent, compliant, and traceable industrial supply chains.</p>
+    </div>
+</body>
+</html>
+

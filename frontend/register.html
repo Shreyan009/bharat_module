@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register as a Manufacturer – List Your Products on Bharat Modules | OEM Onboarding</title>
+<meta name="description" content="Indian manufacturers and OEMs — get verified, get listed, and receive direct RFQs from defence and enterprise buyers on Bharat Modules. India's closed B2B network for indigenous industrial components. No traders, no middlemen. Start your verification today.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bharatmodules.com/manufacturers">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bharatmodules.com/manufacturers">
+<meta property="og:title" content="Register as a Manufacturer on Bharat Modules – India's B2B Industrial Network">
+<meta property="og:description" content="Stop chasing leads at expos. List your verified inventory on Bharat Modules and receive direct RFQs from defence and enterprise buyers, 24/7. MSME and GST verified manufacturers only.">
+<meta property="og:site_name" content="Bharat Modules">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Register as a Manufacturer – Bharat Modules | OEM Onboarding">
+<meta name="twitter:description" content="Indian OEMs: get verified, get listed, and receive direct RFQs from defence and enterprise buyers on India's closed B2B industrial network. No traders allowed."
+>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="register.css" />
+    <script src="base.js" defer></script>
+    <script src="register.js" defer></script>
+</head>
+<body>
+
+<!-- NAV FADE BACKDROP -->
+<div class="nav-backdrop-fade"></div>
+
+<!-- NAV -->
+    <nav id="nav">
+      <div class="nav-default">
+        <a href="index.html" class="nav-logo">
+          <span class="nav-logo-text">BHARAT MODULES</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalogue.html">Products</a></li>
+          <li><a href="cart.html">RFQ Cart</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html" class="nav-btn-login active">Register / Login</a></li>
+          <li>
+            <button class="nav-search" onclick="openSearch()" aria-label="Search">
+              <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg>
+            </button>
+          </li>
+        </ul>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav-search-bar" id="navSearchBar">
+        <div class="nav-search-icon-inline">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg>
+        </div>
+        <input type="text" id="navSearchInput" placeholder="Search components, modules, OEMs, part numbers…">
+        <div class="nav-search-divider"></div>
+        <button class="nav-search-submit">Search</button>
+        <button class="nav-search-close" onclick="closeSearch()" aria-label="Close">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" /></svg>
+        </button>
+      </div>
+    </nav>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup-box">
+    <div class="popup-header-strip">
+      <span class="popup-header-brand">BHARAT MODULES</span>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="popup-back-btn" id="popupBackBtn" onclick="goBackToChoose()" style="display:none;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Back
+        </button>
+        <button class="popup-close" onclick="closePopup()">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="popup-choose" id="popupChoose">
+      <div class="popup-choose-half" onclick="chooseBuyer()">
+        <div class="popup-choice-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0H5m-2 0h2M9 7h6M9 11h6M9 15h4"/></svg>
+        </div>
+        <div class="popup-choice-title">I am a Buyer</div>
+        <div class="popup-choice-desc">Source verified indigenous components from certified Class-I manufacturers. Post RFQs and receive direct quotes.</div>
+        <div class="popup-choice-arrow">
+          Continue
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+      <div class="popup-choose-half" onclick="chooseManufacturer()">
+        <div class="popup-choice-icon">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M12 12v4M10 14h4"/></svg>
+        </div>
+        <div class="popup-choice-title">I am a Manufacturer</div>
+        <div class="popup-choice-desc">List your verified inventory on India's closed-network supply chain and receive direct RFQs from enterprise buyers, 24/7.</div>
+        <div class="popup-choice-arrow">
+          Continue
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-form-wrap" id="popupForm">
+      <div class="popup-form-body">
+        <div class="popup-form-title">Create Your Account</div>
+        <div class="popup-form-subtitle">Takes 90 seconds. You'll enter the verification queue immediately after.</div>
+        <div class="popup-form-grid">
+          <div class="form-field" id="fieldName">
+            <label>Full Name</label>
+            <input type="text" id="inputName" placeholder="Rajesh Kumar" />
+            <div class="field-error">Full name is required</div>
+          </div>
+          <div class="form-field" id="fieldBusiness">
+            <label>Registered Business Name</label>
+            <input type="text" id="inputBusiness" placeholder="Precision Parts Pvt. Ltd." />
+            <div class="field-error">Business name is required</div>
+          </div>
+          <div class="form-field" id="fieldEmail">
+            <label>Official Work Email</label>
+            <input type="email" id="inputEmail" placeholder="you@company.co.in" />
+            <div class="field-error" id="errorEmail">Email address is required</div>
+          </div>
+          <div class="form-field" id="fieldPhone">
+            <label>Mobile / WhatsApp</label>
+            <input type="tel" id="inputPhone" placeholder="98765 43210" />
+            <div class="field-error" id="errorPhone">Mobile number is required</div>
+          </div>
+        </div>
+        <button class="popup-submit-btn" onclick="submitForm()">
+          Create Account — Begin Verification
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div class="popup-trust-note">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        Your data is secure and never shared with third parties.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+  HERO (dark)
+══════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg-layer"></div>
+  <div class="hero-grain"></div>
+        <circle cx="950" cy="350" r="20" fill="#E85C0D" opacity="0.05"/>
+        <circle cx="1100" cy="250" r="16" fill="#E85C0D" opacity="0.04"/>
+        <circle cx="600" cy="480" r="20" fill="#E85C0D" opacity="0.05"/>
+        <circle cx="750" cy="580" r="24" fill="#E85C0D" opacity="0.06"/>
+        <circle cx="200" cy="500" r="16" fill="#E85C0D" opacity="0.04"/>
+      </g>
+      <g fill="#E85C0D">
+        <circle cx="320" cy="200" r="4" opacity="0.8" style="animation:nodeFloat 5s ease 0s infinite"/>
+        <circle cx="520" cy="310" r="5" opacity="1" style="animation:nodeFloat 5s ease 0.8s infinite"/>
+        <circle cx="750" cy="280" r="6" opacity="1" style="animation:nodeFloat 5s ease 1.6s infinite"/>
+        <circle cx="950" cy="350" r="4" opacity="0.8" style="animation:nodeFloat 5s ease 0.4s infinite"/>
+        <circle cx="1100" cy="250" r="3.5" opacity="0.7" style="animation:nodeFloat 5s ease 2s infinite"/>
+        <circle cx="600" cy="480" r="4" opacity="0.8" style="animation:nodeFloat 5s ease 1.2s infinite"/>
+        <circle cx="750" cy="580" r="5" opacity="0.9" style="animation:nodeFloat 5s ease 2.4s infinite"/>
+        <circle cx="200" cy="500" r="3.5" opacity="0.6" style="animation:nodeFloat 5s ease 1.8s infinite"/>
+      </g>
+      <g fill="rgba(255,255,255,0.15)" font-family="Outfit,sans-serif" font-size="10" letter-spacing="1">
+        <text x="336" y="196">DELHI</text>
+        <text x="536" y="306">PUNE</text>
+        <text x="764" y="276">BENGALURU</text>
+        <text x="964" y="346">CHENNAI</text>
+        <text x="1114" y="246">HYD</text>
+        <text x="614" y="476">MUMBAI</text>
+        <text x="764" y="596">GOA</text>
+        <text x="166" y="496">JAIPUR</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+
+    <h1 class="hero-headline">
+      <span class="hl-line" style="white-space:nowrap;">Stop Chasing Leads at Expos.</span>
+      <span class="hl-line" style="white-space:nowrap;">Let <span class="hl-orange">Procurement</span> Come to You.</span>
+      <span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Bharat Modules OEM Manufacturer Registration – List Your Verified Products</span>
+    </h1>
+
+    <p class="hero-sub">
+      India's closed B2B network for <strong>verified manufacturers</strong> —
+      your live catalog in front of defense &amp; enterprise buyers, <strong>every day.</strong>
+    </p>
+
+    <div class="hero-cta-row">
+      <button class="btn-orange" onclick="goToOnboarding()">
+        Start Verification
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <a href="#why-us" class="btn-ghost">
+        How It Works
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 15l7 7 7-7"/></svg>
+      </a>
+    </div>
+
+    <!-- 365D Visibility Stats Pills (replaces old trust bar) -->
+    <div class="hero-stats-row">
+      <div class="hero-stat-pill">
+        <span class="hero-stat-num">365<span class="hl-o">D</span></span>
+        <span class="hero-stat-lbl">Visibility / Year</span>
+      </div>
+      <div class="hero-stat-pill">
+        <span class="hero-stat-num"><span class="hl-o">0</span></span>
+        <span class="hero-stat-lbl">Cold Calling</span>
+      </div>
+      <div class="hero-stat-pill">
+        <span class="hero-stat-num">24<span class="hl-o">/7</span></span>
+        <span class="hero-stat-lbl">Live Catalog</span>
+      </div>
+      <div class="hero-stat-pill">
+        <span class="hero-stat-num">100<span class="hl-o">%</span></span>
+        <span class="hero-stat-lbl">Manufacturers</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue">Scroll</div>
+</section>
+
+<!-- STATS STRIP removed — stats shown in hero pills above -->
+
+<!-- ═══════════════════════════════════
+  SECTION 1 — WHY US (white)
+══════════════════════════════════════ -->
+<div class="why-us-section" id="why-us">
+  <div class="section-wrap">
+    <div class="why-us-wrap">
+      <div data-reveal>
+        <div class="section-label">Why Bharat Modules</div>
+        <h2 class="section-title">365 Days of Visibility.<br>Zero <span class="hl">Dead Time.</span></h2>
+        <p class="section-body">A trade expo burns lakhs for 72 hours of reach. Bharat Modules delivers your verified catalog straight to the buyers who are actively searching for exactly what you manufacture, every single day of the year.</p>
+      </div>
+      <div class="why-us-right">
+        <div class="why-card" data-reveal data-reveal-delay="1">
+          <div class="why-card-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-3-3v6M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          </div>
+          <div>
+            <h3 class="why-card-title">Direct RFQ Access</h3>
+            <div class="why-card-desc">Stop cold emailing. Receive formatted, high-intent purchase requests directly into your dashboard from verified procurement teams.</div>
+          </div>
+        </div>
+        <div class="why-card" data-reveal data-reveal-delay="2">
+          <div class="why-card-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="why-card-title">Targeted Indigenous Reach</h3>
+            <div class="why-card-desc">Get seen exclusively by buyers hunting for indigenous hardware. No dilution, no noise from importers. Your specs speak for themselves.</div>
+          </div>
+        </div>
+        <div class="why-card" data-reveal data-reveal-delay="3">
+          <div class="why-card-icon">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <div>
+            <h3 class="why-card-title">Live Catalog Hosting</h3>
+            <div class="why-card-desc">Your full inventory, live 24/7. Update specs, pricing and availability in real time. Your profile stays optimized for discovery.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ═══════════════════════════════════
+  SECTION 2 — IDDM MOAT (dark)
+══════════════════════════════════════ -->
+<div class="moat-outer">
+  <div class="moat-section">
+
+    <!-- Left: heading + callout -->
+    <div data-reveal>
+      <div class="section-label">The Bharat Modules Standard</div>
+      <h2 class="section-title">
+        <span style="display:block; white-space:nowrap;">Traders Don't Get In.</span>
+        <span style="display:block; white-space:nowrap;">Only <span class="hl">Manufacturers</span> Do.</span>
+      </h2>
+      <p class="section-body" style="max-width:380px; margin-bottom:0;">To get listed, you need an active GST registration, a valid MSME certificate and verifiable manufacturing proof. If you produce it in India, you belong here.</p>
+
+      <div class="moat-quality-bar" data-reveal data-reveal-delay="2">
+        <div class="moat-quality-icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h3 class="moat-quality-title">Compete on Specs, Not Price</h3>
+          <div class="moat-quality-sub">Every buyer knows your listing is real. Win on verified quality, not on undercutting margins.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: verification checklist -->
+    <div class="moat-checklist" data-reveal data-reveal-delay="1" id="moatChecklist">
+      <div class="moat-checklist-header">
+        <div class="moat-checklist-dot"></div>
+        Eligibility Criteria
+      </div>
+      <div class="moat-check-row">
+        <div class="moat-check-icon pass">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <span class="moat-check-label">GST Registration</span>
+      </div>
+      <div class="moat-check-row">
+        <div class="moat-check-icon pass">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <span class="moat-check-label">MSME Certificate</span>
+      </div>
+      <div class="moat-check-row">
+        <div class="moat-check-icon pass">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <span class="moat-check-label">Local Content Declaration</span>
+      </div>
+      <div class="moat-check-row">
+        <div class="moat-check-icon pass">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <span class="moat-check-label">Manufacturing Proof</span>
+      </div>
+      <div class="moat-divider-row">Not eligible</div>
+      <div class="moat-check-row fail-row">
+        <div class="moat-check-icon fail">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </div>
+        <span class="moat-check-label">Import Traders</span>
+      </div>
+      <div class="moat-check-row fail-row">
+        <div class="moat-check-icon fail">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </div>
+        <span class="moat-check-label">Shell Companies</span>
+      </div>
+      <div class="moat-check-row fail-row">
+        <div class="moat-check-icon fail">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </div>
+        <span class="moat-check-label">Re-Packagers</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+  SECTION 3 — PRICING (surface bg)
+══════════════════════════════════════ -->
+<div class="pricing-section">
+  <div class="section-wrap">
+    <div data-reveal>
+      <div class="section-label">Transparent Pricing</div>
+      <h2 class="section-title">High-End Infrastructure.<br><span class="hl">Low Market Overhead.</span></h2>
+      <p class="section-body" style="max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">No hidden fees, no surprises. Three simple pillars built so you only pay more when you earn more.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card featured" data-reveal data-reveal-delay="1">
+        <div class="pricing-card-num">01</div>
+        <div class="pricing-card-center">
+          <div class="pricing-card-icon">
+            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div>
+            <h3 class="pricing-card-name">Onboarding Fee</h3>
+            <div class="pricing-card-label">One-Time</div>
+          </div>
+        </div>
+        <div class="pricing-card-desc">One-time compliance & catalog setup. Paid once, valid forever.</div>
+      </div>
+      <div class="pricing-card featured" data-reveal data-reveal-delay="2">
+        <div class="pricing-card-num">02</div>
+        <div class="pricing-card-center">
+          <div class="pricing-card-icon">
+            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div>
+            <h3 class="pricing-card-name">Platform Access</h3>
+            <div class="pricing-card-label">Annual Subscription</div>
+          </div>
+        </div>
+        <div class="pricing-card-desc">24/7 catalog hosting & priority visibility to verified buyers.</div>
+      </div>
+      <div class="pricing-card featured" data-reveal data-reveal-delay="3">
+        <div class="pricing-card-num">03</div>
+        <div class="pricing-card-center">
+          <div class="pricing-card-icon">
+            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="9" cy="9" r="2"/><circle cx="15" cy="15" r="2"/><path d="M16 8l-8 8"/></svg>
+          </div>
+          <div>
+            <h3 class="pricing-card-name">Success Fee</h3>
+            <div class="pricing-card-label">Per Confirmed PO</div>
+          </div>
+        </div>
+        <div class="pricing-card-desc">Minimal transaction percentage applied purely on securing a verified PO.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+  FINAL PUSH (dark)
+══════════════════════════════════════ -->
+<div class="final-push" id="start-verification">
+  <div class="final-push-inner" data-reveal>
+    <div class="final-push-tag">The Time Is Now</div>
+    <h2 class="final-push-title">Prove Your Origin.<br><span class="hl">Expand Your Market.</span></h2>
+    <p class="final-push-sub">India's defense and enterprise buyers are searching for you. Stop being invisible to them. Get verified, get listed, and let procurement come to your door.</p>
+    <button class="btn-cta-big" onclick="window.location.href='onboarding.html'">
+      Start Verification
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo-text">BHARAT MODULES</span>
+          <p>India's trusted B2B marketplace for industrial modules — Search, Source, Build with confidence.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Platform</h4>
+            <a href="catalogue.html">Browse Catalogue</a>
+            <a href="cart.html">RFQ Portal</a>
+            <a href="#">Bharat Verified</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Sitemap</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">RFQ FAQ</a>
+            <a href="#">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Bharat Modules & Others. All rights reserved.</p>
+        <a href="#" class="scroll-top" aria-label="Back to top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7" /></svg>
+        </a>
+      </div>
+    </footer>
+
+<!-- SEO: Structured descriptive content (visually hidden, accessible to search engines) -->
+<div style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;" aria-hidden="true">
+  <p>Bharat Modules is India's closed-network B2B platform exclusively for verified Indian manufacturers and OEMs. If you manufacture industrial components, defence hardware, drone parts, aerospace modules, or any indigenous product in India, you can list your verified inventory on our platform and receive direct Request for Quotation (RFQ) submissions from enterprise buyers and defence procurement teams. Our platform eliminates the need to attend expensive trade expos, rely on cold-calling, or depend on import traders and middlemen.</p>
+  <p>To register as a manufacturer on Bharat Modules, your business must hold an active GST registration, a valid MSME certificate, and provide verifiable proof of manufacturing. Import traders, shell companies, and re-packagers are not permitted on the platform. Only genuine Indian manufacturers who produce components indigenously are eligible for listing. This strict verification process — called the Bharat Verified standard — ensures that every buyer on our platform trusts that your listing represents a real, compliant, original manufacturer.</p>
+  <p>Once verified and listed, your full product catalog is hosted live 24 hours a day, 7 days a week, giving your business 365 days of visibility to qualified procurement teams. You will receive formatted, high-intent RFQs directly into your dashboard without any cold outreach required. Our transparent pricing model includes a one-time onboarding fee for compliance and catalog setup, an annual subscription for platform access and priority buyer visibility, and a minimal success fee applied only when a verified purchase order is confirmed. Register today and let procurement come to you.</p>
+</div>
+</body>
+</html>
+
+

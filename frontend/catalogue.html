@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products – Bharat Modules</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="catalogue.css" />
+    <script src="base.js" defer></script>
+    <script src="catalogue.js" defer></script>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav id="nav">
+      <div class="nav-default">
+        <a href="index.html" class="nav-logo">
+          <span class="nav-logo-text">BHARAT MODULES</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalogue.html">Products</a></li>
+          <li><a href="cart.html">RFQ Cart</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html" class="nav-btn-login">Register / Login</a></li>
+          <li>
+            <button class="nav-search" onclick="openSearch()" aria-label="Search">
+              <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg>
+            </button>
+          </li>
+          <li class="theme-toggle-li">
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
+              <svg class="sun-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              <svg class="moon-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </button>
+          </li>
+        </ul>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav-search-bar" id="navSearchBar">
+        <div class="nav-search-icon-inline">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg>
+        </div>
+        <input type="text" id="navSearchInput" placeholder="Search components, modules, OEMs, part numbers…">
+        <div class="nav-search-divider"></div>
+        <button class="nav-search-submit"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg></button>
+        <button class="nav-search-close" onclick="closeSearch()" aria-label="Close">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" /></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ══════════════ CATEGORY POPUP ══════════════ -->
+    <div
+      class="cat-popup-overlay"
+      id="catPopupOverlay"
+      onclick="closeCatPopup(event)"
+    >
+      <div class="cat-popup">
+        <div class="cat-popup-header">
+          <span class="cat-popup-title">Browse Categories</span>
+          <button class="cat-popup-close" onclick="closeCatPopup()">
+            <svg
+              width="12"
+              height="12"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="cat-grid">
+          <a
+            class="cat-item all-cat"
+            onclick="
+              filterByCategory('All');
+              closeCatPopup();
+            "
+          >
+            <div class="cat-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+              </svg>
+            </div>
+            <div>
+              <span class="cat-item-name">All Categories</span>
+              <span class="cat-item-count">48 products</span>
+            </div>
+          </a>
+          <a
+            class="cat-item"
+            onclick="
+              filterByCategory('Motors');
+              closeCatPopup();
+            "
+          >
+            <div class="cat-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"
+                />
+              </svg>
+            </div>
+            <div>
+              <span class="cat-item-name">Motors</span>
+              <span class="cat-item-count">12 products</span>
+            </div>
+          </a>
+          <a
+            class="cat-item"
+            onclick="
+              filterByCategory('Flight Controllers');
+              closeCatPopup();
+            "
+          >
+            <div class="cat-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"
+                />
+              </svg>
+            </div>
+            <div>
+              <span class="cat-item-name">Flight Controllers</span>
+              <span class="cat-item-count">8 products</span>
+            </div>
+          </a>
+          <a
+            class="cat-item"
+            onclick="
+              filterByCategory('Battery');
+              closeCatPopup();
+            "
+          >
+            <div class="cat-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <rect x="2" y="7" width="16" height="10" rx="2" />
+                <path d="M22 11v2" />
+              </svg>
+            </div>
+            <div>
+              <span class="cat-item-name">Battery</span>
+              <span class="cat-item-count">10 products</span>
+            </div>
+          </a>
+          <a
+            class="cat-item"
+            onclick="
+              filterByCategory('ESC');
+              closeCatPopup();
+            "
+          >
+            <div class="cat-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+            </div>
+            <div>
+              <span class="cat-item-name">ESC</span>
+              <span class="cat-item-count">9 products</span>
+            </div>
+          </a>
+          <a
+            class="cat-item"
+            onclick="
+              filterByCategory('3D Printing');
+              closeCatPopup();
+            "
+          >
+            <div class="cat-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                />
+              </svg>
+            </div>
+            <div>
+              <span class="cat-item-name">3D Printing</span>
+              <span class="cat-item-count">9 products</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ PAGE WRAP ══════════════ -->
+    <div class="page-wrap">
+      <!-- ── CATALOGUE PAGE ── -->
+      <div class="page-catalogue" id="pageCatalogue">
+        <div class="cat-page-header">
+          <div class="cat-breadcrumb">
+            <a href="index.html">Home</a>
+            <span>›</span>
+            <span id="catBreadcrumbLabel">All Products</span>
+          </div>
+          <h1 class="cat-page-title" id="catPageTitle">PRODUCT CATALOGUE</h1>
+          <p class="cat-page-sub" id="catPageSub">
+            Verified Indian-manufactured components for aerospace, defence &
+            industrial applications
+          </p>
+        </div>
+
+        <div class="cat-body">
+          <!-- Mobile Hamburger Toggle -->
+          <button class="cat-sidebar-toggle" onclick="toggleCategorySidebar()">
+            <span></span><span></span><span></span>
+          </button>
+
+          <!-- Sidebar -->
+          <aside class="cat-sidebar" id="catSidebar">
+            <div class="filter-section">
+              <div class="filter-title">
+                Category
+                <a class="filter-clear" onclick="clearFilters()">Clear all</a>
+              </div>
+              <div class="filter-item" onclick="toggleFilter(this, 'Motors')">
+                <div class="filter-checkbox" id="fc-Motors"></div>
+                <span class="filter-label">Motors</span>
+                <span class="filter-count">12</span>
+              </div>
+              <div class="filter-item" onclick="toggleFilter(this, 'ESC')">
+                <div class="filter-checkbox" id="fc-ESC"></div>
+                <span class="filter-label">ESC</span>
+                <span class="filter-count">9</span>
+              </div>
+              <div
+                class="filter-item"
+                onclick="toggleFilter(this, 'Flight Controllers')"
+              >
+                <div class="filter-checkbox" id="fc-FC"></div>
+                <span class="filter-label">Flight Controllers (F.C)</span>
+                <span class="filter-count">8</span>
+              </div>
+              <div class="filter-item" onclick="toggleFilter(this, 'Battery')">
+                <div class="filter-checkbox" id="fc-Battery"></div>
+                <span class="filter-label">Batteries</span>
+                <span class="filter-count">10</span>
+              </div>
+              <div
+                class="filter-item"
+                onclick="toggleFilter(this, '3D Printing')"
+              >
+                <div class="filter-checkbox" id="fc-3D"></div>
+                <span class="filter-label">3D Printing</span>
+                <span class="filter-count">9</span>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Grid + toolbar -->
+          <div style="margin-top: 24px">
+            <div class="cat-toolbar">
+              <p class="cat-result-count">
+                <strong id="resultCount">48</strong> products found
+              </p>
+              <div class="cat-sort">
+                <label>Sort by</label>
+                <select class="sort-select" onchange="sortProducts(this.value)">
+                  <option value="default">Featured</option>
+                  <option value="name">Name A–Z</option>
+                  <option value="name-desc">Name Z–A</option>
+                  <option value="verified">Verified First</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+              <!-- Cards injected by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PRODUCT DETAIL PAGE ── -->
+      <div class="page-pdp" id="pagePDP">
+        <div class="pdp-page">
+          <div class="pdp-breadcrumb">
+            <a onclick="goToCatalogue()">Home</a>
+            <span>›</span>
+            <a onclick="goToCatalogue()">Products</a>
+            <span>›</span>
+            <span id="pdpBreadcrumb">Product</span>
+          </div>
+
+          <div class="pdp-layout">
+            <!-- Left: Gallery -->
+            <div class="pdp-gallery">
+              <div class="pdp-main-img" id="pdpMainImg">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="0.8"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="12" r="3" />
+                  <path
+                    d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"
+                  />
+                </svg>
+              </div>
+              <div class="pdp-thumbnails">
+                <div class="pdp-thumb active">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 2v4M12 18v4" />
+                  </svg>
+                </div>
+                <div class="pdp-thumb">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"
+                    />
+                  </svg>
+                </div>
+                <div class="pdp-thumb">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M9 9h6M9 12h6M9 15h4" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Product info -->
+            <div class="pdp-info">
+              <span class="pdp-category-badge" id="pdpCategory">Motors</span>
+              <h1 class="pdp-title" id="pdpTitle">Product Name</h1>
+              <p class="pdp-desc" id="pdpDesc">
+                Product description will appear here.
+              </p>
+
+              <div class="pdp-trust-row">
+                <span
+                  class="badge-verified"
+                  style="
+                    background: #fff3e0;
+                    color: #e85c0d;
+                    border-color: rgba(232, 92, 13, 0.2);
+                  "
+                >
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                    />
+                  </svg>
+                  MSME Certified
+                </span>
+                <span class="pdp-sku" id="pdpSKU">SKU: —</span>
+              </div>
+
+              <!-- Action box -->
+              <div class="pdp-action-box">
+                <p class="pdp-action-box-label">Request for Quotation (RFQ)</p>
+                <div class="pdp-qty-row">
+                  <span class="pdp-qty-label">Quantity (units):</span>
+                  <input
+                    class="pdp-qty-input"
+                    type="number"
+                    value="1"
+                    min="1"
+                    id="pdpQty"
+                  />
+                </div>
+                <button
+                  class="btn-quote"
+                  id="btnAddToQuote"
+                  onclick="addToQuote()"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                  Add to Quote
+                </button>
+                <div style="display: flex; gap: 10px; margin-bottom: 10px">
+                  <button
+                    class="btn-quote"
+                    id="btnRFQCart"
+                    onclick="addToRFQCart()"
+                    style="background: var(--orange); flex: 1"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.8 5M7 13l-1.574 7.858A1 1 0 005.192 22h13.616a1 1 0 00.992-1.142L17 13M16 16a1 1 0 11-2 0m-5 0a1 1 0 11-2 0"
+                      />
+                    </svg>
+                    RFQ Cart
+                  </button>
+                  <button
+                    class="btn-wishlist"
+                    id="btnWishlist"
+                    onclick="toggleWishlist()"
+                    style="flex: 0.3"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <p class="pdp-pricing-note">
+                  Pricing is subject to purchase quantity
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specs + Certs below -->
+          <div class="pdp-specs-section">
+            <div class="section-divider"></div>
+            <h2 class="specs-title">Technical Specifications</h2>
+            <div class="specs-tabs">
+              <div
+                class="specs-tab active"
+                onclick="switchTab(this, 'tab-specs')"
+              >
+                Specifications
+              </div>
+              <div
+                class="specs-tab"
+                onclick="switchTab(this, 'tab-electrical')"
+              >
+                Electrical
+              </div>
+              <div
+                class="specs-tab"
+                onclick="switchTab(this, 'tab-compliance')"
+              >
+                Compliance
+              </div>
+            </div>
+
+            <div class="specs-panel active" id="tab-specs">
+              <table class="specs-table" id="specsTable">
+                <!-- populated by JS -->
+              </table>
+            </div>
+            <div class="specs-panel" id="tab-electrical">
+              <table class="specs-table" id="elecTable">
+                <!-- populated by JS -->
+              </table>
+            </div>
+            <div class="specs-panel" id="tab-compliance">
+              <table class="specs-table" id="complianceTable">
+                <!-- populated by JS -->
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /page-wrap -->
+
+    <!-- Quote drawer -->
+    <div class="quote-drawer" id="quoteDrawer">
+      <div
+        class="quote-count-wrap"
+        style="display: flex; align-items: center; gap: 10px"
+      >
+        <span class="quote-drawer-count" id="quoteCount">1</span>
+        <span class="quote-drawer-text">item in your quote list</span>
+      </div>
+      <button class="btn-submit-quote" onclick="submitQuote()">
+        Go to RFQ cart →
+      </button>
+    </div>
+
+    <!-- ══════════════ FOOTER ══════════════ -->
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo-text">BHARAT MODULES</span>
+          <p>India's trusted B2B marketplace for industrial modules — Search, Source, Build with confidence.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Platform</h4>
+            <a href="catalogue.html">Browse Catalogue</a>
+            <a href="cart.html">RFQ Portal</a>
+            <a href="#">Bharat Verified</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Sitemap</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">RFQ FAQ</a>
+            <a href="#">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Bharat Modules & Others. All rights reserved.</p>
+        <a href="#" class="scroll-top" aria-label="Back to top" onclick="scrollToTop(event)">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7" /></svg>
+        </a>
+      </div>
+    </footer>
+
+  </body>
+</html>
+
+

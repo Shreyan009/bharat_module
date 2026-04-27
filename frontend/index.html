@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bharat Modules - Search. Source. Build.</title>
+    <meta
+      name="description"
+      content="Bharat Modules is India's premier B2B platform for industrial component sourcing. Discover, validate, and procure verified modules from certified Class-I Indian manufacturers. Search, Source, Build with confidence."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://bharatmodules.com/" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bharatmodules.com/" />
+    <meta
+      property="og:title"
+      content="Bharat Modules - India's Industrial B2B Sourcing Platform"
+    />
+    <meta
+      property="og:description"
+      content="Search, source, and procure verified industrial components from certified Indian manufacturers. India's trusted B2B marketplace for industrial modules."
+    />
+    <meta property="og:site_name" content="Bharat Modules" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Bharat Modules - Search. Source. Build."
+    />
+    <meta
+      name="twitter:description"
+      content="India's premier B2B platform for industrial component sourcing. Discover and procure verified modules from certified Class-I Indian manufacturers."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="base.js" defer></script>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav id="nav">
+      <div class="nav-default">
+        <a href="index.html" class="nav-logo">
+          <span class="nav-logo-text">BHARAT MODULES</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalogue.html">Products</a></li>
+          <li><a href="cart.html">RFQ Cart</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html" class="nav-btn-login">Register / Login</a></li>
+          <li>
+            <button class="nav-search" onclick="openSearch()" aria-label="Search">
+              <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg>
+            </button>
+          </li>
+          <li class="theme-toggle-li">
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
+              <svg class="sun-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              <svg class="moon-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </button>
+          </li>
+        </ul>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav-search-bar" id="navSearchBar">
+        <div class="nav-search-icon-inline">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg>
+        </div>
+        <input type="text" id="navSearchInput" placeholder="Search components, modules, OEMs, part numbers…">
+        <div class="nav-search-divider"></div>
+        <button class="nav-search-submit"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg></button>
+        <button class="nav-search-close" onclick="closeSearch()" aria-label="Close">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" /></svg>
+        </button>
+      </div>
+    </nav>
+
+
+    <!--REGISTRATION POPUP-->
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup-box">
+        <!-- Header strip -->
+        <div class="popup-header-strip">
+          <span class="popup-header-brand">BHARAT MODULES</span>
+          <div style="display: flex; align-items: center; gap: 12px">
+            <button
+              class="popup-back-btn"
+              id="popupBackBtn"
+              onclick="goBackToChoose()"
+              style="display: none"
+            >
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+              >
+                <path d="M19 12H5M12 5l-7 7 7 7" />
+              </svg>
+              Back
+            </button>
+            <button class="popup-close" onclick="closePopup()">
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+              >
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 1: Choose Role -->
+        <div class="popup-choose" id="popupChoose">
+          <div class="popup-choose-card" onclick="chooseBuyer()">
+            <div class="popup-card-bg"></div>
+            <div class="popup-choice-icon">
+              <svg
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 21h18M5 21V7l8-4v18M13 3l8 4v14M8 11h2M8 15h2M16 11h2M16 15h2"
+                />
+              </svg>
+            </div>
+            <div class="popup-choice-content">
+              <div class="popup-choice-title">I am a Buyer</div>
+              <div class="popup-choice-desc">
+                Source verified indigenous components from certified Class-I
+                manufacturers. Post RFQs and receive direct quotes.
+              </div>
+            </div>
+            <div class="popup-choice-arrow">
+              <span>Continue</span>
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+          <div class="popup-choose-card" onclick="chooseManufacturer()">
+            <div class="popup-card-bg"></div>
+            <div class="popup-choice-icon">
+              <svg
+                width="22"
+                height="22"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                />
+              </svg>
+            </div>
+            <div class="popup-choice-content">
+              <div class="popup-choice-title">I am a Manufacturer</div>
+              <div class="popup-choice-desc">
+                List your verified inventory on India's closed-network supply
+                chain and receive direct RFQs from enterprise buyers, 24/7.
+              </div>
+            </div>
+            <div class="popup-choice-arrow">
+              <span>Continue</span>
+              <svg
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Manufacturer Form -->
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-logo-text-wrap">
+          <span class="hero-logo-text">BHARAT MODULES</span>
+        </div>
+        <h1 class="hero-tagline">
+          Transforming Complex Industrial Sourcing into a
+          <em>Seamless B2B Experience</em>.
+        </h1>
+        <p class="hero-sub">
+          India's premier platform for discovering, validating, and procuring
+          industrial modules — built for engineers, procurement leads, and
+          system integrators.
+        </p>
+        <div class="hero-cta">
+          <a href="catalogue.html" class="btn-primary">Browse Catalogue</a>
+          <a href="contact.html" class="btn-secondary">Request a Quote</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">Scroll</div>
+    </section>
+
+    <!-- FUNNEL -->
+    <section class="funnel" id="funnel">
+      <div class="funnel-inner">
+        <div class="funnel-chain">
+          <div class="chain-item" data-observe>
+            <div class="chain-number">01</div>
+            <div class="chain-text">
+              <div class="chain-label">
+                <span class="dot-search">SEARCH</span>
+              </div>
+              <p class="chain-desc">
+                Discover thousands of verified industrial components through our
+                precision-indexed catalogue.
+              </p>
+            </div>
+          </div>
+          <div class="chain-item" data-observe>
+            <div class="chain-number">02</div>
+            <div class="chain-text">
+              <div class="chain-label">SOURCE</div>
+              <p class="chain-desc">
+                Source from validated Indian OEMs — we filter out traders to
+                guarantee original factories.
+              </p>
+            </div>
+          </div>
+          <div class="chain-item" data-observe>
+            <div class="chain-number">03</div>
+            <div class="chain-text">
+              <div class="chain-label">
+                <span class="dot-build">BUILD</span>
+              </div>
+              <p class="chain-desc">
+                Procure with confidence, backed by Proof of Origin documentation
+                and compliance standards.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="funnel-copy" data-observe>
+          <p class="funnel-eyebrow">Our Process</p>
+          <h2 class="funnel-headline">
+            One Platform. <span style="white-space: nowrap">End-to-End</span
+            ><br />Industrial Procurement.
+          </h2>
+          <p class="funnel-body">
+            Search thousands of <strong>verified components</strong>, source
+            directly from <strong>validated Indian manufacturers</strong>, and
+            build with the confidence of <strong>'Proof of Origin'</strong> and
+            full compliance traceability.
+          </p>
+          <div class="funnel-pill">
+            <svg
+              width="14"
+              height="14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Bharat Verified</span> OEMs only
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS -->
+    <section class="metrics" id="metrics">
+      <div class="metrics-inner">
+        <div class="section-header">
+          <p class="section-eyebrow">By the Numbers</p>
+          <h2 class="section-title">Trusted by India's Industrial Ecosystem</h2>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card" data-observe>
+            <div class="metric-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+              </svg>
+            </div>
+            <div class="metric-value" data-target="0" data-suffix="">0</div>
+            <div class="metric-label">Modules Listed</div>
+            <div class="metric-sub">Verified Components</div>
+          </div>
+          <div class="metric-card" data-observe>
+            <div class="metric-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
+              </svg>
+            </div>
+            <div class="metric-value" data-target="0" data-suffix="">0</div>
+            <div class="metric-label">Vendors Available</div>
+            <div class="metric-sub">Bharat Verified OEMs</div>
+          </div>
+          <div class="metric-card" data-observe>
+            <div class="metric-icon">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
+                />
+              </svg>
+            </div>
+            <div class="metric-value" data-target="0" data-suffix="">0</div>
+            <div class="metric-label">Components Delivered</div>
+            <div class="metric-sub">Across India</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo-text">BHARAT MODULES</span>
+          <p>India's trusted B2B marketplace for industrial modules — Search, Source, Build with confidence.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Platform</h4>
+            <a href="catalogue.html">Browse Catalogue</a>
+            <a href="cart.html">RFQ Portal</a>
+            <a href="#">Bharat Verified</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Sitemap</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">RFQ FAQ</a>
+            <a href="#">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Bharat Modules & Others. All rights reserved.</p>
+        <a href="#" class="scroll-top" aria-label="Back to top" onclick="scrollToTop(event)">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7" /></svg>
+        </a>
+      </div>
+    </footer>
+
+    <!-- SEO: Structured descriptive content (visually hidden, accessible to search engines) -->
+    <div
+      style="
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      "
+      aria-hidden="true"
+    >
+      <p>
+        Bharat Modules is India's premier B2B industrial sourcing platform
+        designed for engineers, procurement leads, and system integrators. Our
+        platform enables buyers to discover thousands of verified industrial
+        components and electronic modules through a precision-indexed catalogue.
+        We connect enterprise buyers directly with certified Class-I Indian
+        manufacturers, eliminating traders and middlemen to guarantee original
+        factory supply. Every vendor on Bharat Modules undergoes rigorous Bharat
+        Verified certification to ensure authenticity, compliance, and quality
+        standards.
+      </p>
+      <p>
+        Our end-to-end industrial procurement process covers three key stages:
+        Search, Source, and Build. In the Search phase, buyers explore our
+        comprehensive database of verified industrial components using advanced
+        filters for part numbers, specifications, and OEM details. In the Source
+        phase, buyers connect directly with validated Indian manufacturers and
+        receive competitive quotes through our RFQ portal. In the Build phase,
+        all transactions are backed by Proof of Origin documentation and full
+        compliance traceability, giving procurement teams the confidence to move
+        forward.
+      </p>
+      <p>
+        Bharat Modules serves industries including defence, aerospace,
+        automotive, energy, and infrastructure. Our platform supports Make in
+        India initiatives by promoting indigenous manufacturing and reducing
+        dependence on imported components. Manufacturers can list their verified
+        inventory, receive direct RFQs from enterprise buyers, and grow their
+        business reach across India. Join India's trusted B2B marketplace for
+        industrial modules today.
+      </p>
+    </div>
+
+  </body>
+</html>
+
+

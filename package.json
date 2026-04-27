@@ -1,0 +1,22 @@
+{
+  "name": "bharat-modules",
+  "version": "1.0.0",
+  "description": "Bharat Modules — India's B2B Industrial Component Sourcing Platform",
+  "private": true,
+  "scripts": {
+    "start": "concurrently --names \"FRONTEND,BACKEND\" --prefix-colors \"cyan,yellow\" \"npm run frontend\" \"npm run backend\"",
+    "frontend": "live-server frontend --port=3000 --no-browser --wait=500",
+    "backend": "cd bharat-modules-backend/bharat-backend && node server.js",
+    "dev": "concurrently --names \"FRONTEND,BACKEND\" --prefix-colors \"cyan,yellow\" \"npm run frontend\" \"npm run dev:backend\"",
+    "dev:backend": "cd bharat-modules-backend/bharat-backend && npx nodemon server.js",
+    "install:backend": "cd bharat-modules-backend/bharat-backend && npm install",
+    "setup": "npm install && npm run install:backend"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

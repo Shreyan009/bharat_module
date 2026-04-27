@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RFQ Cart – Request for Quotation | Bharat Modules</title>
+    <meta
+      name="description"
+      content="Review and submit your Request for Quotation (RFQ) on Bharat Modules. Add verified industrial components to your RFQ cart and receive competitive quotes directly from certified Indian manufacturers within 24 hours."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://bharatmodules.com/rfq-cart" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bharatmodules.com/rfq-cart" />
+    <meta
+      property="og:title"
+      content="RFQ Cart – Request for Quotation | Bharat Modules"
+    />
+    <meta
+      property="og:description"
+      content="Submit your RFQ for verified industrial components on Bharat Modules. Get competitive quotes from certified Indian OEM manufacturers within 24 hours."
+    />
+    <meta property="og:site_name" content="Bharat Modules" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="RFQ Cart – Bharat Modules | Request for Quotation"
+    />
+    <meta
+      name="twitter:description"
+      content="Review your selected industrial components and submit a Request for Quotation to certified Indian manufacturers on Bharat Modules."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="cart.css" />
+    <script src="base.js" defer></script>
+    <script src="cart.js" defer></script>
+  </head>
+  <body>
+    <!-- NAV — exact homepage nav -->
+    <nav id="nav">
+      <div class="nav-default">
+        <a href="index.html" class="nav-logo">
+          <span class="nav-logo-text">BHARAT MODULES</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalogue.html">Products</a></li>
+          <li><a href="cart.html">RFQ Cart</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html" class="nav-btn-login">Register / Login</a></li>
+          <li>
+            <button class="nav-search" onclick="openSearch()" aria-label="Search">
+              <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg>
+            </button>
+          </li>
+          <li class="theme-toggle-li">
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
+              <svg class="sun-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              <svg class="moon-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </button>
+          </li>
+        </ul>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav-search-bar" id="navSearchBar">
+        <div class="nav-search-icon-inline">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg>
+        </div>
+        <input type="text" id="navSearchInput" placeholder="Search components, modules, OEMs, part numbers…">
+        <div class="nav-search-divider"></div>
+        <button class="nav-search-submit"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg></button>
+        <button class="nav-search-close" onclick="closeSearch()" aria-label="Close">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" /></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- PAGE -->
+    <div class="page-wrapper">
+      <!-- ═══════ CART VIEW ═══════ -->
+      <div id="view-cart">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">›</span>
+          <a href="catalogue.html">Products</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>RFQ Cart</span>
+        </div>
+
+        <h1 class="rfq-page-title">RFQ Cart</h1>
+
+        <div class="cart-table-wrapper" id="cartTableWrapper">
+          <table class="cart-table" id="cartTable">
+            <thead>
+              <tr>
+                <th style="width: 52px">Sl. No</th>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th style="width: 48px"></th>
+              </tr>
+            </thead>
+            <tbody id="cartBody">
+              <!-- rows injected by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Empty state (hidden when cart has items) -->
+        <div class="cart-empty" id="cartEmpty" style="display: none">
+          <div class="cart-empty-icon">
+            <svg
+              width="56"
+              height="56"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+          </div>
+          <h2 class="cart-empty-title">Your RFQ cart is empty</h2>
+          <div class="cart-empty-sub">
+            Add products from the catalogue to request a quotation.
+          </div>
+          <a
+            href="catalogue.html"
+            class="btn-submit-rfq"
+            style="text-decoration: none"
+            >Browse Products</a
+          >
+        </div>
+
+        <div class="cart-submit-row" id="cartSubmitRow">
+          <div class="cart-count-note" id="cartCountNote">
+            <strong id="cartCount">3</strong> product(s) in your RFQ
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a href="catalogue.html" class="btn-continue">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              Add More Products
+            </a>
+            <button class="btn-submit-rfq" onclick="submitRFQ()">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+              Submit RFQ
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- /view-cart -->
+
+      <!-- ═══════ SUCCESS VIEW ═══════ -->
+      <div id="view-success">
+        <div class="success-wrap">
+          <div class="success-card">
+            <div class="success-icon">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h2 class="success-title">RFQ Submitted!</h2>
+            <div class="success-body">
+              The quote has been sent to your
+              <strong>registered email</strong>.<br />
+              You can also check it in <strong>"My RFQs"</strong> in the
+              Dashboard.
+            </div>
+            <div class="success-actions">
+              <a href="dashboard-buyer.html" class="btn-go-dashboard">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="7" height="7" />
+                  <rect x="14" y="3" width="7" height="7" />
+                  <rect x="14" y="14" width="7" height="7" />
+                  <rect x="3" y="14" width="7" height="7" />
+                </svg>
+                Go to Dashboard
+              </a>
+              <a href="catalogue.html" class="btn-go-products"
+                >Browse More Products</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /view-success -->
+    </div>
+    <!-- /page-wrapper -->
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo-text">BHARAT MODULES</span>
+          <p>
+            India's trusted B2B marketplace for industrial modules — Search,
+            Source, Build with confidence.
+          </p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h3
+              style="
+                font-size: 11px;
+                font-weight: 600;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: #ccc;
+                margin-bottom: 16px;
+              "
+            >
+              Platform
+            </h3>
+            <a href="catalogue.html">Browse Catalogue</a>
+            <a href="cart.html">RFQ Portal</a>
+            <a href="#">Bharat Verified</a>
+          </div>
+          <div class="footer-col">
+            <h3
+              style="
+                font-size: 11px;
+                font-weight: 600;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: #ccc;
+                margin-bottom: 16px;
+              "
+            >
+              Company
+            </h3>
+            <a href="#">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Sitemap</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">RFQ FAQ</a>
+            <a href="#">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Bharat Modules & Others. All rights reserved.</p>
+        <a href="#" class="scroll-top" aria-label="Back to top" onclick="scrollToTop(event)">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7" /></svg>
+        </a>
+      </div>
+    </footer>
+
+    <!-- SEO: Structured descriptive content (visually hidden, accessible to search engines) -->
+    <div
+      style="
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      "
+      aria-hidden="true"
+    >
+      <p>
+        The Bharat Modules RFQ Cart is a secure portal for enterprise buyers,
+        defence procurement teams, and system integrators to compile and submit
+        Requests for Quotation (RFQ) for verified Indian-manufactured industrial
+        components. Once you have browsed the product catalogue and selected the
+        components you need, you can add them to your RFQ cart with the required
+        quantities and submit a single consolidated quotation request directly
+        to our sourcing team.
+      </p>
+      <p>
+        All products available through the Bharat Modules RFQ process are
+        sourced exclusively from Bharat Verified and MSME Certified Indian OEM
+        manufacturers. This means every component in your RFQ is backed by a
+        Certificate of Conformity, a Technical Data Sheet, and Proof of Origin
+        documentation. Pricing is subject to NDA and bulk rates are available on
+        request. Once your RFQ is submitted, our procurement team reviews your
+        requirements and contacts you within 24 hours with competitive
+        manufacturer quotes.
+      </p>
+      <p>
+        The RFQ cart supports multiple products in a single submission. You can
+        adjust quantities, add more products from the catalogue, or remove items
+        before submitting. After submission, you will receive confirmation at
+        your registered work email address, and the full RFQ history is
+        available in your Buyer Dashboard under My RFQs. Bharat Modules handles
+        the entire procurement communication on your behalf, ensuring full
+        supply chain confidentiality and compliance through our closed B2B
+        industrial network.
+      </p>
+    </div>
+  </body>
+</html>
+
+

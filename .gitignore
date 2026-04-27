@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.*
+*.log
+
+# Documents and Prompts
+BharatModules_14Day_Build_Plan.md
+BharatModules_Database_Deploy_Guide.md
+BharatModules_PRD.md
+prompt*
+*.zip
+temp_restore/
+
+# DB files
+**/db/setup.sql
+**/db/setup.js
+**/db/seed.js

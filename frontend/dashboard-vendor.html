@@ -1,0 +1,1907 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manufacturer Dashboard – Bharat Modules | OEM Command Center</title>
+    <meta
+      name="description"
+      content="Manage your verified OEM business on Bharat Modules. Respond to RFQs from defence and enterprise buyers, update your live inventory, track payments, manage compliance documents, and monitor SLA performance — all in one manufacturer dashboard."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <link
+      rel="canonical"
+      href="https://bharatmodules.com/manufacturer/dashboard"
+    />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://bharatmodules.com/manufacturer/dashboard"
+    />
+    <meta
+      property="og:title"
+      content="Manufacturer Dashboard – Bharat Modules | OEM Command Center"
+    />
+    <meta
+      property="og:description"
+      content="Your Bharat Modules manufacturer portal. Respond to RFQs, manage inventory, track orders and payments, and maintain compliance documents."
+    />
+    <meta property="og:site_name" content="Bharat Modules" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Manufacturer Dashboard – Bharat Modules"
+    />
+    <meta
+      name="twitter:description"
+      content="OEM Command Center on Bharat Modules. Manage RFQs, inventory, compliance, and payments from verified Indian defence and enterprise buyers."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Melete&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="dashboard-vendor.css" />
+    <script src="base.js" defer></script>
+    <script src="dashboard-vendor.js" defer></script>
+  </head>
+  <body>
+    <!-- ═══ SIDEBAR ═══ -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-mark">
+          <img
+            src="./bharat-modules-logo.png"
+            alt="Bharat Modules"
+            style="max-width: 100%; height: auto; max-height: 40px"
+          />
+        </div>
+        <div class="vendor-chip">
+          <div class="v-avatar">PN</div>
+          <div>
+            <div class="v-name">Precision Navi Mfg.</div>
+            <div class="v-id">OEM #4872</div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group-label">Operations</div>
+        <div class="nav-item active" onclick="showView('dashboard')">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+          </svg>
+          Dashboard
+        </div>
+        <div class="nav-item" onclick="showView('rfq')">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+            <polyline points="14,2 14,8 20,8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+          </svg>
+          RFQ
+          <span class="nav-badge">7</span>
+        </div>
+        <div class="nav-item" onclick="showView('inventory')">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"
+            />
+          </svg>
+          Inventory
+          <span class="nav-badge g">12</span>
+        </div>
+        <div class="nav-item" onclick="showView('compliance')">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          Compliance Vault
+          <span class="nav-badge a">1</span>
+        </div>
+        <div class="nav-item" onclick="showView('payments')">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="1" y="4" width="22" height="16" rx="2" />
+            <line x1="1" y1="10" x2="23" y2="10" />
+          </svg>
+          Payments
+        </div>
+        <div class="nav-group-label">Account</div>
+        <div class="nav-item" onclick="showView('profile')">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          Profile
+        </div>
+        <div class="nav-item" onclick="window.location.href='contact.html'">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          Support
+        </div>
+        <div class="nav-item" onclick="window.location.href='index.html'" style="margin-top:auto;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>
+          </svg>
+          Log Out
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="live-dot"></div>
+        System Operational · IST
+      </div>
+    </aside>
+
+    <!-- ═══ MAIN AREA ═══ -->
+    <!-- Visually hidden H1 for SEO -->
+    <h1
+      style="
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      "
+    >
+      Manufacturer Dashboard – Bharat Modules OEM Portal
+    </h1>
+
+    <main class="main">
+      <!-- SLA Banner -->
+      <div class="sla-banner" id="slaBanner">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <path
+            d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+          />
+          <line x1="12" y1="9" x2="12" y2="13" />
+          <line x1="12" y1="17" x2="12.01" y2="17" />
+        </svg>
+        SLA CRITICAL — RFQ-8042 (Turbine Blade Actuator) expires in
+        <strong
+          id="urgentTimer"
+          style="
+            color: #000;
+            margin: 0 4px;
+            font-family: &quot;Rajdhani&quot;, sans-serif;
+            font-size: 14px;
+          "
+          >09:14:00</strong
+        >
+        — Response required
+        <button class="cta" onclick="openRFQ('8042')">RESPOND NOW →</button>
+      </div>
+
+      <!-- ══ VIEW: DASHBOARD ══ -->
+      <div class="view active" id="view-dashboard">
+        <div class="topbar">
+          <div>
+            <h2 class="page-title">Command Center</h2>
+            <div class="page-sub" id="liveClock">
+              Tuesday, 14 Apr 2026 · IST 00:00
+            </div>
+          </div>
+          <div class="topbar-right">
+            <div class="verified-badge" id="compBadge">
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                <polyline points="22,4 12,14.01 9,11.01" />
+              </svg>
+              Class-I Verified
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Bar -->
+        <div class="metric-bar">
+          <div class="metric-item m-orange">
+            <div class="m-label">Pending Quotes</div>
+            <div class="m-value">7</div>
+            <div class="m-delta">+3 since yesterday</div>
+          </div>
+          <div class="metric-item m-blue">
+            <div class="m-label">Active Orders</div>
+            <div class="m-value">4</div>
+            <div class="m-delta">2 dispatched this week</div>
+          </div>
+          <div class="metric-item m-green">
+            <div class="m-label">Monthly Revenue</div>
+            <div class="m-value">₹28L</div>
+            <div class="m-delta">↑ 12% vs last month</div>
+          </div>
+          <div class="metric-item m-amber">
+            <div class="m-label">SLA Compliance</div>
+            <div class="m-value">84%</div>
+            <div class="m-delta">Target: 90%</div>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="two-col">
+            <!-- Recent RFQs -->
+            <div>
+              <div class="sec-hdr">
+                <h3 class="sec-title">
+                  Recent RFQ Activity <span>Sorted by SLA urgency</span>
+                </h3>
+                <button class="btn btn-ghost btn-sm" onclick="showView('rfq')">
+                  View All →
+                </button>
+              </div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>RFQ ID</th>
+                      <th>Component</th>
+                      <th>Buyer</th>
+                      <th>SLA</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr onclick="openRFQ('8042')">
+                      <td class="td-id">RFQ-8042</td>
+                      <td class="td-part">Turbine Blade Actuator</td>
+                      <td>
+                        <div class="blind-id">
+                          <svg
+                            width="11"
+                            height="11"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <rect x="3" y="11" width="18" height="11" rx="2" />
+                            <path d="M7 11V7a5 5 0 0110 0v4" /></svg
+                          >Verified Tier-1
+                        </div>
+                      </td>
+                      <td>
+                        <span class="sla-clock crit" id="dashTimer1"
+                          >09:14:00</span
+                        >
+                      </td>
+                      <td>
+                        <span class="badge b-orange">Awaiting Quote</span>
+                      </td>
+                    </tr>
+                    <tr onclick="openRFQ('8041')">
+                      <td class="td-id">RFQ-8041</td>
+                      <td class="td-part">Servo Actuator Mk-IV</td>
+                      <td>
+                        <div class="blind-id">
+                          <svg
+                            width="11"
+                            height="11"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <rect x="3" y="11" width="18" height="11" rx="2" />
+                            <path d="M7 11V7a5 5 0 0110 0v4" /></svg
+                          >Verified Tier-1
+                        </div>
+                      </td>
+                      <td><span class="sla-clock warn">11:05:00</span></td>
+                      <td>
+                        <span class="badge b-orange">Awaiting Quote</span>
+                      </td>
+                    </tr>
+                    <tr onclick="openRFQ('8039')">
+                      <td class="td-id">RFQ-8039</td>
+                      <td class="td-part">IMU Sensor Module</td>
+                      <td>
+                        <div class="blind-id">
+                          <svg
+                            width="11"
+                            height="11"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <rect x="3" y="11" width="18" height="11" rx="2" />
+                            <path d="M7 11V7a5 5 0 0110 0v4" /></svg
+                          >Verified Tier-1
+                        </div>
+                      </td>
+                      <td><span class="sla-clock ok">31:52:00</span></td>
+                      <td>
+                        <span class="badge b-orange">Awaiting Quote</span>
+                      </td>
+                    </tr>
+                    <tr onclick="openRFQ('8031')">
+                      <td class="td-id">RFQ-8031</td>
+                      <td class="td-part">EO/IR Camera Gimbal</td>
+                      <td
+                        style="
+                          font-size: 12px;
+                          color: var(--green-bright);
+                          font-weight: 500;
+                        "
+                      >
+                        HAL – Bengaluru
+                      </td>
+                      <td>—</td>
+                      <td><span class="badge b-green">PO Accepted</span></td>
+                    </tr>
+                    <tr>
+                      <td class="td-id" style="color: var(--text-faint)">
+                        RFQ-8019
+                      </td>
+                      <td style="color: var(--text-faint); font-size: 12.5px">
+                        Fiber Optic Gyro
+                      </td>
+                      <td>
+                        <div class="blind-id">
+                          <svg
+                            width="11"
+                            height="11"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <rect x="3" y="11" width="18" height="11" rx="2" />
+                            <path d="M7 11V7a5 5 0 0110 0v4" /></svg
+                          >Verified Tier-1
+                        </div>
+                      </td>
+                      <td>—</td>
+                      <td><span class="badge b-red">Expired</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Activity Feed -->
+            <div>
+              <div class="sec-hdr">
+                <h3 class="sec-title">Activity Feed <span>Real-time</span></h3>
+              </div>
+              <div class="table-wrap">
+                <div class="act-feed">
+                  <div class="act-item">
+                    <div class="act-dot o"></div>
+                    <div>
+                      <div class="act-text">
+                        <strong>RFQ-8042</strong> received — Turbine Blade
+                        Actuator ×250 units
+                      </div>
+                      <div class="act-time">2 hours ago</div>
+                    </div>
+                  </div>
+                  <div class="act-item">
+                    <div class="act-dot g"></div>
+                    <div>
+                      <div class="act-text">
+                        Quote submitted for <strong>RFQ-8027</strong> — Radar
+                        Antenna Array
+                      </div>
+                      <div class="act-time">4 hours ago</div>
+                    </div>
+                  </div>
+                  <div class="act-item">
+                    <div class="act-dot g"></div>
+                    <div>
+                      <div class="act-text">
+                        <strong>PO Accepted</strong> — EO/IR Camera Gimbal ×6
+                        units (HAL)
+                      </div>
+                      <div class="act-time">Yesterday, 16:30</div>
+                    </div>
+                  </div>
+                  <div class="act-item">
+                    <div class="act-dot b"></div>
+                    <div>
+                      <div class="act-text">
+                        ISO 9001:2015 certification renewed — expires Dec 2026
+                      </div>
+                      <div class="act-time">3 days ago</div>
+                    </div>
+                  </div>
+                  <div class="act-item">
+                    <div class="act-dot o"></div>
+                    <div>
+                      <div class="act-text">
+                        <strong>RFQ-8041</strong> received — Servo Actuator
+                        Mk-IV ×80 units
+                      </div>
+                      <div class="act-time">4 days ago</div>
+                    </div>
+                  </div>
+                  <div class="act-item">
+                    <div class="act-dot w"></div>
+                    <div>
+                      <div class="act-text">
+                        MSME Udyam certificate expiring in
+                        <strong style="color: var(--amber-bright)"
+                          >20 days</strong
+                        >
+                      </div>
+                      <div class="act-time">System alert</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ VIEW: RFQ QUEUE ══ -->
+      <div class="view" id="view-rfq">
+        <div class="topbar">
+          <div>
+            <h2 class="page-title">RFQ</h2>
+            <div class="page-sub">7 open requests · Sorted by SLA urgency</div>
+          </div>
+          <div class="topbar-right">
+            <div
+              style="
+                font-size: 11px;
+                color: var(--text-dim);
+                font-weight: 500;
+                letter-spacing: 0.04em;
+              "
+            >
+              <span style="color: var(--amber-bright); font-weight: 600"
+                >⚠ 2 critical</span
+              >
+              · 3 standard · 2 submitted
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="rfq-filters">
+            <button
+              class="rfq-filter-btn active"
+              onclick="filterRFQ('all', this)"
+            >
+              All
+            </button>
+            <button
+              class="rfq-filter-btn"
+              onclick="filterRFQ('received', this)"
+            >
+              Received
+            </button>
+            <button
+              class="rfq-filter-btn"
+              onclick="filterRFQ('submitted', this)"
+            >
+              Submitted
+            </button>
+            <button
+              class="rfq-filter-btn"
+              onclick="filterRFQ('accepted', this)"
+            >
+              Accepted
+            </button>
+            <button class="rfq-filter-btn" onclick="filterRFQ('expired', this)">
+              Expired
+            </button>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table" id="rfqTable">
+              <thead>
+                <tr>
+                  <th>RFQ ID</th>
+                  <th>Component Name</th>
+                  <th>Quantity</th>
+                  <th>Buyer</th>
+                  <th>Time Remaining</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  onclick="openRFQ('8042')"
+                  style="background: rgba(217, 119, 6, 0.04)"
+                  data-rfq-status="received"
+                >
+                  <td class="td-id">RFQ-8042</td>
+                  <td class="td-part">Turbine Blade Actuator</td>
+                  <td class="td-qty">250 units</td>
+                  <td>
+                    <div class="blind-id">
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                        <path d="M7 11V7a5 5 0 0110 0v4" /></svg
+                      >Verified Tier-1
+                    </div>
+                  </td>
+                  <td>
+                    <span class="sla-clock crit" id="rfqTimer1">09:14:00</span>
+                  </td>
+                  <td><span class="badge b-orange">Awaiting Quote</span></td>
+                  <td>
+                    <button
+                      class="btn btn-amber btn-sm"
+                      onclick="
+                        event.stopPropagation();
+                        openRFQ('8042');
+                      "
+                    >
+                      Respond
+                    </button>
+                  </td>
+                </tr>
+                <tr
+                  onclick="openRFQ('8041')"
+                  style="background: rgba(217, 119, 6, 0.04)"
+                  data-rfq-status="received"
+                >
+                  <td class="td-id">RFQ-8041</td>
+                  <td class="td-part">Servo Actuator Mk-IV</td>
+                  <td class="td-qty">80 units</td>
+                  <td>
+                    <div class="blind-id">
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                        <path d="M7 11V7a5 5 0 0110 0v4" /></svg
+                      >Verified Tier-1
+                    </div>
+                  </td>
+                  <td><span class="sla-clock warn">11:05:00</span></td>
+                  <td><span class="badge b-orange">Awaiting Quote</span></td>
+                  <td>
+                    <button
+                      class="btn btn-amber btn-sm"
+                      onclick="
+                        event.stopPropagation();
+                        openRFQ('8041');
+                      "
+                    >
+                      Respond
+                    </button>
+                  </td>
+                </tr>
+                <tr onclick="openRFQ('8039')" data-rfq-status="received">
+                  <td class="td-id">RFQ-8039</td>
+                  <td class="td-part">IMU Sensor Module</td>
+                  <td class="td-qty">500 units</td>
+                  <td>
+                    <div class="blind-id">
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                        <path d="M7 11V7a5 5 0 0110 0v4" /></svg
+                      >Verified Tier-1
+                    </div>
+                  </td>
+                  <td><span class="sla-clock ok">31:52:00</span></td>
+                  <td><span class="badge b-orange">Awaiting Quote</span></td>
+                  <td>
+                    <button
+                      class="btn btn-ghost btn-sm"
+                      onclick="
+                        event.stopPropagation();
+                        openRFQ('8039');
+                      "
+                    >
+                      View
+                    </button>
+                  </td>
+                </tr>
+                <tr onclick="openRFQ('8038')" data-rfq-status="received">
+                  <td class="td-id">RFQ-8038</td>
+                  <td class="td-part">Thermal Camera Core</td>
+                  <td class="td-qty">30 units</td>
+                  <td>
+                    <div class="blind-id">
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                        <path d="M7 11V7a5 5 0 0110 0v4" /></svg
+                      >Verified Tier-1
+                    </div>
+                  </td>
+                  <td><span class="sla-clock ok">40:00:00</span></td>
+                  <td><span class="badge b-orange">Awaiting Quote</span></td>
+                  <td>
+                    <button
+                      class="btn btn-ghost btn-sm"
+                      onclick="
+                        event.stopPropagation();
+                        openRFQ('8038');
+                      "
+                    >
+                      View
+                    </button>
+                  </td>
+                </tr>
+                <tr onclick="openRFQ('8027')" data-rfq-status="submitted">
+                  <td class="td-id">RFQ-8027</td>
+                  <td class="td-part">Radar Antenna Array</td>
+                  <td class="td-qty">12 units</td>
+                  <td>
+                    <div class="blind-id">
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                        <path d="M7 11V7a5 5 0 0110 0v4" /></svg
+                      >Verified Tier-1
+                    </div>
+                  </td>
+                  <td style="color: var(--text-faint)">—</td>
+                  <td><span class="badge b-blue">Quote Submitted</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Track</button></td>
+                </tr>
+                <tr onclick="openRFQ('8031')" data-rfq-status="accepted">
+                  <td class="td-id">RFQ-8031</td>
+                  <td class="td-part">EO/IR Camera Gimbal</td>
+                  <td class="td-qty">6 units</td>
+                  <td
+                    style="
+                      font-size: 12px;
+                      color: var(--green-bright);
+                      font-weight: 500;
+                    "
+                  >
+                    HAL – Bengaluru Division
+                  </td>
+                  <td style="color: var(--text-faint)">—</td>
+                  <td><span class="badge b-green">PO Accepted</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Fulfill</button></td>
+                </tr>
+                <tr data-rfq-status="expired">
+                  <td class="td-id" style="color: var(--text-faint)">
+                    RFQ-8019
+                  </td>
+                  <td style="color: var(--text-faint); font-size: 12.5px">
+                    Fiber Optic Gyro
+                  </td>
+                  <td class="td-qty" style="color: var(--text-faint)">
+                    200 units
+                  </td>
+                  <td>
+                    <div class="blind-id">
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                        <path d="M7 11V7a5 5 0 0110 0v4" /></svg
+                      >Verified Tier-1
+                    </div>
+                  </td>
+                  <td style="color: var(--text-faint)">—</td>
+                  <td><span class="badge b-red">Expired</span></td>
+                  <td>—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ VIEW: INVENTORY ══ -->
+      <div class="view" id="view-inventory">
+        <div class="topbar">
+          <div>
+            <h2 class="page-title">Inventory</h2>
+            <div class="page-sub" id="inventoryPageSub">
+              4 live catalog items · 2 pending audit
+            </div>
+          </div>
+          <div class="topbar-right">
+            <button class="btn btn-primary" onclick="openAddModal()">
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              Add Module
+            </button>
+          </div>
+        </div>
+        <div class="content">
+          <div class="inv-grid" id="inventoryGrid">
+            <!-- Inventory cards rendered dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ VIEW: COMPLIANCE VAULT ══ -->
+      <div class="view" id="view-compliance">
+        <div class="topbar">
+          <div>
+            <h2 class="page-title">Compliance Vault</h2>
+            <div class="page-sub">Regulatory status · 1 action required</div>
+          </div>
+          <div class="topbar-right">
+            <div class="verified-badge warn">
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                />
+                <line x1="12" y1="9" x2="12" y2="13" />
+              </svg>
+              Renewal Required
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <!-- Summary ring -->
+          <div class="comp-summary">
+            <div class="cs-score">
+              <div class="cs-ring">
+                <svg width="70" height="70" viewBox="0 0 70 70">
+                  <circle class="cs-ring-bg" cx="35" cy="35" r="30" />
+                  <circle class="cs-ring-fill" cx="35" cy="35" r="30" />
+                </svg>
+                <div class="cs-num">81%</div>
+              </div>
+            </div>
+            <div class="cs-meta">
+              <div class="cs-title">Overall Verification Score</div>
+              <div class="cs-desc">
+                3 of 4 certifications fully active. MSME Udyam renewal pending —
+                expires in 20 days. Renew immediately to maintain Class-I
+                Verified status on marketplace.
+              </div>
+              <div style="margin-top: 12px; display: flex; gap: 10px">
+                <button class="btn btn-amber btn-sm">Renew MSME Now</button>
+                <button class="btn btn-ghost btn-sm">Download All Docs</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="compliance-grid">
+            <!-- MSME -->
+            <div class="doc-card" style="border-color: rgba(217, 119, 6, 0.3)">
+              <div class="doc-top">
+                <div
+                  class="doc-icon"
+                  style="
+                    background: var(--amber-dim);
+                    border-color: rgba(217, 119, 6, 0.25);
+                  "
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--amber-bright)"
+                    stroke-width="2"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="doc-name">MSME Udyam</div>
+                  <div class="doc-type">
+                    Ministry of MSME · Udyam Registration
+                  </div>
+                </div>
+                <div style="margin-left: auto">
+                  <span class="badge b-amber">Expiring</span>
+                </div>
+              </div>
+              <div class="verif-bar-wrap">
+                <div class="verif-label">
+                  <span>Verification Progress</span>
+                  <span class="verif-pct warn">72%</span>
+                </div>
+                <div class="verif-bar">
+                  <div class="verif-fill vf-amber" style="width: 72%"></div>
+                </div>
+              </div>
+              <div class="doc-meta">
+                <div>
+                  <div class="dm-label">Valid Until</div>
+                  <div class="dm-val warn">04 May 2026</div>
+                </div>
+                <div>
+                  <div class="dm-label">Reg. No.</div>
+                  <div class="dm-val">UD-MH-11-0048721</div>
+                </div>
+                <button class="btn btn-amber btn-sm">Renew</button>
+              </div>
+            </div>
+
+            <!-- ISO -->
+            <div class="doc-card">
+              <div class="doc-top">
+                <div
+                  class="doc-icon"
+                  style="
+                    background: var(--green-dim);
+                    border-color: rgba(34, 197, 94, 0.2);
+                  "
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--green-bright)"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                    <polyline points="22,4 12,14.01 9,11.01" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="doc-name">ISO 9001:2015</div>
+                  <div class="doc-type">Quality Management System</div>
+                </div>
+                <div style="margin-left: auto">
+                  <span class="badge b-green">Active</span>
+                </div>
+              </div>
+              <div class="verif-bar-wrap">
+                <div class="verif-label">
+                  <span>Verification Progress</span>
+                  <span class="verif-pct full">100%</span>
+                </div>
+                <div class="verif-bar">
+                  <div class="verif-fill vf-green" style="width: 100%"></div>
+                </div>
+              </div>
+              <div class="doc-meta">
+                <div>
+                  <div class="dm-label">Valid Until</div>
+                  <div class="dm-val ok">Dec 2026</div>
+                </div>
+                <div>
+                  <div class="dm-label">Cert. No.</div>
+                  <div class="dm-val">QMS-IN-2024-0981</div>
+                </div>
+                <button class="btn btn-ghost btn-sm">View</button>
+              </div>
+            </div>
+
+            <!-- Factory License -->
+            <div class="doc-card">
+              <div class="doc-top">
+                <div
+                  class="doc-icon"
+                  style="
+                    background: var(--green-dim);
+                    border-color: rgba(34, 197, 94, 0.2);
+                  "
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--green-bright)"
+                    stroke-width="2"
+                  >
+                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                    <polyline points="9,22 9,12 15,12 15,22" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="doc-name">Factory License</div>
+                  <div class="doc-type">
+                    Factories Act 1948 · State Authority
+                  </div>
+                </div>
+                <div style="margin-left: auto">
+                  <span class="badge b-green">Active</span>
+                </div>
+              </div>
+              <div class="verif-bar-wrap">
+                <div class="verif-label">
+                  <span>Verification Progress</span>
+                  <span class="verif-pct full">100%</span>
+                </div>
+                <div class="verif-bar">
+                  <div class="verif-fill vf-green" style="width: 100%"></div>
+                </div>
+              </div>
+              <div class="doc-meta">
+                <div>
+                  <div class="dm-label">Valid Until</div>
+                  <div class="dm-val ok">Mar 2027</div>
+                </div>
+                <div>
+                  <div class="dm-label">License No.</div>
+                  <div class="dm-val">KA-FAC-2022-8174</div>
+                </div>
+                <button class="btn btn-ghost btn-sm">View</button>
+              </div>
+            </div>
+
+            <!-- DGFT IEC -->
+            <div class="doc-card">
+              <div class="doc-top">
+                <div
+                  class="doc-icon"
+                  style="
+                    background: var(--green-dim);
+                    border-color: rgba(34, 197, 94, 0.2);
+                  "
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--green-bright)"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path
+                      d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="doc-name">DGFT IEC Code</div>
+                  <div class="doc-type">Import-Export Code · Lifetime</div>
+                </div>
+                <div style="margin-left: auto">
+                  <span class="badge b-green">Active</span>
+                </div>
+              </div>
+              <div class="verif-bar-wrap">
+                <div class="verif-label">
+                  <span>Verification Progress</span>
+                  <span class="verif-pct full">100%</span>
+                </div>
+                <div class="verif-bar">
+                  <div class="verif-fill vf-green" style="width: 100%"></div>
+                </div>
+              </div>
+              <div class="doc-meta">
+                <div>
+                  <div class="dm-label">Valid Until</div>
+                  <div class="dm-val ok">Lifetime</div>
+                </div>
+                <div>
+                  <div class="dm-label">IEC No.</div>
+                  <div class="dm-val">0517042891</div>
+                </div>
+                <button class="btn btn-ghost btn-sm">View</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ VIEW: PAYMENTS ══ -->
+      <div class="view" id="view-payments">
+        <div class="topbar">
+          <div>
+            <h2 class="page-title">Payments</h2>
+            <div class="page-sub">Transaction ledger · OEM #4872</div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="two-col">
+            <div>
+              <div class="sec-hdr">
+                <h3 class="sec-title">Recent Transactions</h3>
+              </div>
+              <div class="table-wrap">
+                <div class="pay-row">
+                  <div class="pay-id">TXN-2041</div>
+                  <div class="pay-desc">
+                    EO/IR Camera Gimbal ×6 — HAL Bengaluru
+                  </div>
+                  <div class="pay-amt cr">+₹4,20,000</div>
+                  <span class="badge b-green" style="flex-shrink: 0"
+                    >Credited</span
+                  >
+                </div>
+                <div class="pay-row">
+                  <div class="pay-id">TXN-2038</div>
+                  <div class="pay-desc">Radar Antenna Array ×12 — Advance</div>
+                  <div class="pay-amt cr">+₹7,80,000</div>
+                  <span class="badge b-amber" style="flex-shrink: 0"
+                    >Pending</span
+                  >
+                </div>
+                <div class="pay-row">
+                  <div class="pay-id">TXN-2035</div>
+                  <div class="pay-desc">IMU Sensor Module ×200 — Q1 order</div>
+                  <div class="pay-amt cr">+₹12,50,000</div>
+                  <span class="badge b-green" style="flex-shrink: 0"
+                    >Credited</span
+                  >
+                </div>
+                <div class="pay-row">
+                  <div class="pay-id">TXN-2030</div>
+                  <div class="pay-desc">Platform fee — Q1 2026</div>
+                  <div class="pay-amt db">−₹18,500</div>
+                  <span class="badge b-gray" style="flex-shrink: 0"
+                    >Deducted</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="sec-hdr"><h3 class="sec-title">Summary</h3></div>
+              <div class="table-wrap" style="padding: 20px">
+                <div style="display: flex; flex-direction: column; gap: 14px">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding-bottom: 12px;
+                      border-bottom: 1px solid var(--border);
+                    "
+                  >
+                    <span
+                      style="
+                        font-size: 11px;
+                        color: var(--text-dim);
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        font-weight: 600;
+                      "
+                      >Revenue</span
+                    >
+                    <span
+                      style="
+                        font-family: &quot;Rajdhani&quot;, sans-serif;
+                        font-weight: 700;
+                        font-size: 22px;
+                        color: var(--green-bright);
+                      "
+                      >₹28,32,000</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding-bottom: 12px;
+                      border-bottom: 1px solid var(--border);
+                    "
+                  >
+                    <span
+                      style="
+                        font-size: 11px;
+                        color: var(--text-dim);
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        font-weight: 600;
+                      "
+                      >Pending</span
+                    >
+                    <span
+                      style="
+                        font-family: &quot;Rajdhani&quot;, sans-serif;
+                        font-weight: 700;
+                        font-size: 22px;
+                        color: var(--amber-bright);
+                      "
+                      >₹7,80,000</span
+                    >
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                    "
+                  >
+                    <span
+                      style="
+                        font-size: 11px;
+                        color: var(--text-dim);
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        font-weight: 600;
+                      "
+                      >Platform Fee</span
+                    >
+                    <span
+                      style="
+                        font-family: &quot;Rajdhani&quot;, sans-serif;
+                        font-weight: 700;
+                        font-size: 22px;
+                        color: #f87171;
+                      "
+                      >−₹18,500</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ VIEW: PROFILE ══ -->
+      <div class="view" id="view-profile">
+        <div class="topbar">
+          <div>
+            <h2 class="page-title">Profile</h2>
+            <div class="page-sub">
+              Account information &amp; security settings
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div style="max-width: 560px">
+            <!-- Account Info Card -->
+            <div class="table-wrap" style="padding: 24px; margin-bottom: 18px">
+              <div
+                style="
+                  font-family: &quot;Rajdhani&quot;, sans-serif;
+                  font-weight: 700;
+                  font-size: 13px;
+                  letter-spacing: 0.1em;
+                  text-transform: uppercase;
+                  color: var(--text);
+                  margin-bottom: 18px;
+                  padding-bottom: 12px;
+                  border-bottom: 1px solid var(--border);
+                "
+              >
+                Account Information
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 16px">
+                <div>
+                  <div
+                    style="
+                      font-size: 9.5px;
+                      font-weight: 600;
+                      letter-spacing: 0.13em;
+                      text-transform: uppercase;
+                      color: var(--text-faint);
+                      margin-bottom: 5px;
+                    "
+                  >
+                    Full Name
+                  </div>
+                  <div
+                    style="
+                      font-size: 13.5px;
+                      color: var(--text);
+                      font-weight: 500;
+                      padding: 10px 13px;
+                      background: var(--surface-2);
+                      border: 1px solid var(--border);
+                      border-radius: 4px;
+                    "
+                  >
+                    Praveen Nair
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      font-size: 9.5px;
+                      font-weight: 600;
+                      letter-spacing: 0.13em;
+                      text-transform: uppercase;
+                      color: var(--text-faint);
+                      margin-bottom: 5px;
+                    "
+                  >
+                    Company Name
+                  </div>
+                  <div
+                    style="
+                      font-size: 13.5px;
+                      color: var(--text);
+                      font-weight: 500;
+                      padding: 10px 13px;
+                      background: var(--surface-2);
+                      border: 1px solid var(--border);
+                      border-radius: 4px;
+                    "
+                  >
+                    Precision Navi Manufacturing Pvt. Ltd.
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      font-size: 9.5px;
+                      font-weight: 600;
+                      letter-spacing: 0.13em;
+                      text-transform: uppercase;
+                      color: var(--text-faint);
+                      margin-bottom: 5px;
+                    "
+                  >
+                    Registered Email
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 8px;
+                      padding: 10px 13px;
+                      background: var(--surface-2);
+                      border: 1px solid var(--border);
+                      border-radius: 4px;
+                    "
+                  >
+                    <span
+                      style="
+                        font-size: 13.5px;
+                        color: var(--text);
+                        font-weight: 500;
+                        flex: 1;
+                      "
+                      >praveen.nair@precisionnavi.in</span
+                    >
+                    <span
+                      style="
+                        background: var(--green-dim);
+                        border: 1px solid rgba(22, 163, 74, 0.25);
+                        border-radius: 3px;
+                        padding: 2px 7px;
+                        font-size: 9.5px;
+                        color: var(--green-bright);
+                        font-weight: 600;
+                        letter-spacing: 0.07em;
+                      "
+                      >VERIFIED</span
+                    >
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="
+                      font-size: 9.5px;
+                      font-weight: 600;
+                      letter-spacing: 0.13em;
+                      text-transform: uppercase;
+                      color: var(--text-faint);
+                      margin-bottom: 5px;
+                    "
+                  >
+                    Password
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 8px;
+                      padding: 10px 13px;
+                      background: var(--surface-2);
+                      border: 1px solid var(--border);
+                      border-radius: 4px;
+                    "
+                  >
+                    <span
+                      style="
+                        font-size: 16px;
+                        color: var(--text-dim);
+                        letter-spacing: 0.18em;
+                      "
+                      >••••••••••••</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  margin-top: 20px;
+                  padding-top: 18px;
+                  border-top: 1px solid var(--border);
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                "
+              >
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="var(--text-faint)"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+                <span style="font-size: 11px; color: var(--text-faint)"
+                  >Full Name, Company, and Email cannot be changed. Contact
+                  support for amendments.</span
+                >
+              </div>
+            </div>
+
+            <!-- Password Reset Card -->
+            <div class="table-wrap" style="padding: 24px" id="pwdCard">
+              <div
+                style="
+                  font-family: &quot;Rajdhani&quot;, sans-serif;
+                  font-weight: 700;
+                  font-size: 13px;
+                  letter-spacing: 0.1em;
+                  text-transform: uppercase;
+                  color: var(--text);
+                  margin-bottom: 6px;
+                "
+              >
+                Password & Security
+              </div>
+              <div
+                style="
+                  font-size: 11.5px;
+                  color: var(--text-dim);
+                  margin-bottom: 18px;
+                "
+              >
+                To reset your password, we'll send a one-time verification code
+                to your registered email.
+              </div>
+
+              <!-- Step 0: default -->
+              <div id="pwdStep0">
+                <button class="btn btn-primary" onclick="initPwdReset()">
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                    <path d="M7 11V7a5 5 0 0110 0v4" />
+                  </svg>
+                  Change Password
+                </button>
+              </div>
+
+              <!-- Step 1: OTP sent -->
+              <div id="pwdStep1" style="display: none">
+                <div
+                  style="
+                    background: var(--blue-dim);
+                    border: 1px solid rgba(37, 99, 235, 0.2);
+                    border-radius: 4px;
+                    padding: 11px 14px;
+                    font-size: 11.5px;
+                    color: var(--blue-bright);
+                    margin-bottom: 16px;
+                    display: flex;
+                    align-items: center;
+                    gap: 9px;
+                  "
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  OTP sent to
+                  <strong style="margin-left: 4px"
+                    >praveen.nair@precisionnavi.in</strong
+                  >
+                </div>
+                <div class="form-row">
+                  <label class="form-label">Enter OTP *</label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="otpInput"
+                    placeholder="6-digit code"
+                    maxlength="6"
+                    style="
+                      letter-spacing: 0.3em;
+                      font-size: 16px;
+                      font-weight: 600;
+                      text-align: center;
+                    "
+                  />
+                  <div
+                    style="
+                      font-size: 10px;
+                      color: var(--text-faint);
+                      margin-top: 5px;
+                    "
+                  >
+                    Code valid for 10 minutes.
+                    <span
+                      onclick="initPwdReset()"
+                      style="
+                        color: var(--orange);
+                        cursor: pointer;
+                        text-decoration: underline;
+                      "
+                      >Resend OTP</span
+                    >
+                  </div>
+                </div>
+                <div style="display: flex; gap: 10px">
+                  <button class="btn btn-primary" onclick="verifyOtp()">
+                    Verify &amp; Continue
+                  </button>
+                  <button class="btn btn-ghost" onclick="cancelPwdReset()">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 2: New password -->
+              <div id="pwdStep2" style="display: none">
+                <div class="form-row">
+                  <label class="form-label">New Password *</label>
+                  <input
+                    class="form-input"
+                    type="password"
+                    id="newPwd"
+                    placeholder="Min. 8 characters"
+                  />
+                </div>
+                <div class="form-row">
+                  <label class="form-label">Confirm New Password *</label>
+                  <input
+                    class="form-input"
+                    type="password"
+                    id="confirmPwd"
+                    placeholder="Re-enter password"
+                  />
+                </div>
+                <div style="display: flex; gap: 10px">
+                  <button class="btn btn-primary" onclick="savePwd()">
+                    Save New Password
+                  </button>
+                  <button class="btn btn-ghost" onclick="cancelPwdReset()">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 3: Success -->
+              <div
+                id="pwdStep3"
+                style="display: none; text-align: center; padding: 10px 0"
+              >
+                <div
+                  style="
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background: var(--green-dim);
+                    border: 1px solid rgba(22, 163, 74, 0.3);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto 12px;
+                  "
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--green-bright)"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="20,6 9,17 4,12" />
+                  </svg>
+                </div>
+                <div
+                  style="
+                    font-family: &quot;Rajdhani&quot;, sans-serif;
+                    font-weight: 700;
+                    font-size: 15px;
+                    color: var(--green-bright);
+                    letter-spacing: 0.08em;
+                    margin-bottom: 6px;
+                  "
+                >
+                  PASSWORD UPDATED
+                </div>
+                <div style="font-size: 11.5px; color: var(--text-dim)">
+                  Your password has been changed successfully.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ═══ RFQ SLIDE-OUT ═══ -->
+    <div class="overlay" id="rfqOverlay" onclick="closeRFQ()"></div>
+    <div class="slideout" id="rfqSlideout">
+      <div class="slideout-hdr">
+        <div>
+          <div class="slideout-title" id="slideTitle">RFQ Detail</div>
+          <div
+            style="font-size: 11px; color: var(--text-dim); margin-top: 4px"
+            id="slideSubtitle"
+          ></div>
+        </div>
+        <div class="close-btn" onclick="closeRFQ()">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </div>
+      </div>
+      <div class="slideout-body" id="slideBody"></div>
+      <div class="slideout-footer" id="slideFtr"></div>
+    </div>
+
+    <!-- ═══ INVENTORY DETAIL SLIDE-OUT ═══ -->
+    <div class="overlay" id="invOverlay" onclick="closeInventory()"></div>
+    <div class="slideout" id="invSlideout">
+      <div class="slideout-hdr">
+        <div>
+          <div class="slideout-title" id="invTitle">Product Detail</div>
+          <div
+            style="font-size: 11px; color: var(--text-dim); margin-top: 4px"
+            id="invSubtitle"
+          ></div>
+        </div>
+        <div class="close-btn" onclick="closeInventory()">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </div>
+      </div>
+      <div class="slideout-body" id="invBody"></div>
+      <div class="slideout-footer" id="invFtr"></div>
+    </div>
+
+    <!-- ═══ ADD MODULE SLIDEOUT ═══ -->
+    <div class="overlay" id="addModuleOverlay" onclick="closeAddModal()"></div>
+    <div class="slideout" id="addModuleSlideout">
+      <div class="slideout-hdr">
+        <div>
+          <div class="slideout-title">Add Module to Catalog</div>
+          <div style="font-size: 11px; color: var(--text-dim); margin-top: 4px">
+            Submit new product for catalog listing
+          </div>
+        </div>
+        <div class="close-btn" onclick="closeAddModal()">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </div>
+      </div>
+      <div class="slideout-body" id="addModuleBody">
+        <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px">
+          <!-- Left Column: Form Fields -->
+          <div style="display: flex; flex-direction: column; gap: 14px">
+            <div class="inp-group">
+              <label class="inp-label">Product Name *</label>
+              <input
+                class="num-input"
+                type="text"
+                id="modProductName"
+                placeholder="e.g. Servo Actuator Mk-V"
+              />
+              <div class="inp-hint">
+                Official product name for global catalog
+              </div>
+            </div>
+            <div class="inp-group">
+              <label class="inp-label">Product Description *</label>
+              <textarea
+                class="num-input"
+                id="modDescription"
+                placeholder="Detailed description of the product..."
+                style="
+                  font-family: &quot;Inter&quot;, sans-serif;
+                  min-height: 80px;
+                  padding: 10px;
+                  resize: vertical;
+                "
+              ></textarea>
+              <div class="inp-hint">
+                Highlight key features and capabilities
+              </div>
+            </div>
+            <div class="inp-group">
+              <label class="inp-label">Technical Specifications *</label>
+              <input
+                class="num-input"
+                type="text"
+                id="modTechSpecs"
+                placeholder="e.g. 24V · 10Nm · IP67 · MIL-STD-810G"
+              />
+              <div class="inp-hint">Key specs separated by · (bullet)</div>
+            </div>
+            <div class="inp-group">
+              <label class="inp-label">Minimum Order Qty (MOQ) *</label>
+              <input
+                class="num-input"
+                type="number"
+                id="modMOQ"
+                placeholder="50"
+                min="1"
+              />
+              <div class="inp-hint">Minimum units per order</div>
+            </div>
+            <div class="inp-group">
+              <label class="inp-label">Lead Time (Days) *</label>
+              <input
+                class="num-input"
+                type="number"
+                id="modLeadTime"
+                placeholder="30"
+                min="1"
+              />
+              <div class="inp-hint">Days from PO to delivery</div>
+            </div>
+          </div>
+
+          <!-- Right Column: Document Upload -->
+          <div style="display: flex; flex-direction: column; gap: 14px">
+            <div
+              style="
+                background: var(--surface-2);
+                border: 1.5px dashed var(--border-bright);
+                border-radius: 6px;
+                padding: 24px 16px;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.18s;
+              "
+              id="uploadArea"
+              ondrop="handleDrop(event)"
+              ondragover="handleDragOver(event)"
+              ondragleave="handleDragLeave(event)"
+              onclick="document.getElementById('modFileInput').click()"
+            >
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--text-dim)"
+                stroke-width="1.5"
+                style="margin-bottom: 10px"
+              >
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                <polyline points="17,8 12,3 7,8" />
+                <line x1="12" y1="3" x2="12" y2="15" />
+              </svg>
+              <div
+                style="
+                  font-size: 13px;
+                  color: var(--text-mid);
+                  font-weight: 600;
+                  margin-bottom: 4px;
+                "
+              >
+                Drop files or click to browse
+              </div>
+              <div style="font-size: 10px; color: var(--text-faint)">
+                PDF, DOC, DOCX · Max 25MB each
+              </div>
+              <input
+                type="file"
+                id="modFileInput"
+                multiple
+                style="display: none"
+                onchange="handleFileSelect(event)"
+              />
+            </div>
+
+            <!-- Uploaded Files List -->
+            <div
+              id="uploadedFilesList"
+              style="display: flex; flex-direction: column; gap: 10px"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Warning Message -->
+        <div
+          style="
+            margin-top: 18px;
+            background: var(--amber-dim);
+            border: 1px solid rgba(217, 119, 6, 0.25);
+            border-radius: 4px;
+            padding: 12px 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 11.5px;
+            color: var(--amber);
+          "
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            style="flex-shrink: 0; margin-top: 2px"
+          >
+            <path
+              d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+            />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <div>
+            Item will be held as
+            <strong style="color: var(--orange)">Pending Audit</strong> until
+            approved by super-admin for global catalog.
+          </div>
+        </div>
+      </div>
+      <div class="slideout-footer">
+        <button class="btn btn-ghost" onclick="closeAddModal()">Cancel</button>
+        <button
+          class="btn btn-primary"
+          onclick="submitModule()"
+          style="justify-content: center"
+        >
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <polyline points="20,6 9,17 4,12" />
+          </svg>
+          Submit for Audit
+        </button>
+      </div>
+    </div>
+
+
+  </body>
+</html>
+
+
+
